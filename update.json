@@ -1,8 +1,8 @@
 {
-  "versionCode": 23,
-  "versionName": "2.5.1",
-  "notes": "1、区分说话人固定为 A / B / C / D 四个人，第五个人会自动归到最像的那一位，不再出现 E/F/G/H。\n2、长按气泡左侧的字母，可以直接改成名字（如「老马」「客户」），最多 4 个字；设置 › 重命名说话人 里也能统一改。\n3、历史记录里每条语音都会标出是谁说的：「A语音」「老马语音」，配色跟着说话人走。\n4、设置新增「仅 Wi-Fi 下下载更新包」：用移动数据时先询问，不会误跑流量。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.1/tingyin-2.5.1.apk",
+  "versionCode": 24,
+  "versionName": "2.5.2",
+  "notes": "1、去掉设置里的「重命名说话人」入口，只保留长按气泡左侧字母改名，少一层菜单。\n2、说话人名字当天有效：换一天打开，自动回到 A / B / C / D，避免今天 A 是老马、明天 A 是客户的情况。\n3、其余同上一版：声纹固定 4 人、历史记录标注「谁语音」、更新包仅 Wi-Fi 下载。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.2/tingyin-2.5.2.apk",
   "pageUrl": "",
   "size": 130404841
 }
