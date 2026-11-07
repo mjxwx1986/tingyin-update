@@ -1,8 +1,8 @@
 {
-  "versionCode": 28,
-  "versionName": "2.6.2",
-  "notes": "下载更快更聪明：\n1、开始下载前先同时测几条线路的实时速度，直接挑最快的那条，不再先试慢线。\n2、改用 4 条连接同时下载同一个包，单连接被限速时也能跑满带宽。\n3、换线更果断：4 秒内明显偏慢就换，掉到 80KB/s 以下当场换。\n4、换线不白下，已经下好的分块接着用。\n5、下载框会显示「正在测最快线路…」，几秒后开始正常下载。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.2/tingyin-2.6.2.apk",
+  "versionCode": 29,
+  "versionName": "2.6.3",
+  "notes": "修复短促一声被识别成两遍：\n1、句首缓冲只保留静音，不再把上一段语音重复拼进新句子。\n2、定句或暂停后，还在排队中的临时识别结果立即作废，不会再和正式字幕同时留在屏幕上。\n3、半秒以内的短音不再出临时字幕，直接给定句结果。\n4、极短时间内重复出现的同一句自动去重，一声「啊」只出一条。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.3/tingyin-2.6.3.apk",
   "pageUrl": "",
   "size": 130421397
 }
