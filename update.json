@@ -1,8 +1,8 @@
 {
-  "versionCode": 26,
-  "versionName": "2.6.0",
-  "notes": "1、历史记录改版：一级只显示月历和本月统计，点日期弹出二级窗口看当天记录，窗口内可复制全部、清空这一天。\n2、识别更准（不改模型）：说话前的 0.26 秒声音会一起送进去，句首不再吃字；整句音量自动归一，小声也听得清；句子最长 12 秒切分，呼吸停顿更容易断句。\n3、新增「后台持续收音」开关：打开后锁屏、切到别的应用也能继续转文字，通知栏可随时停止。\n4、设置页可查看当前版本并手动检查更新。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.0/tingyin-2.6.0.apk",
+  "versionCode": 27,
+  "versionName": "2.6.1",
+  "notes": "1、修复：往上翻看记录时，新文字不再把列表拽回最底部，位置不会被抢走。\n2、新增右下角向下箭头：想回到最新一句点一下即可，滑到底部会自动消失。\n3、识别时列表仍会自动跟到最新，只有你主动上滑翻看才停下。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.1/tingyin-2.6.1.apk",
   "pageUrl": "",
   "size": 130421397
 }
