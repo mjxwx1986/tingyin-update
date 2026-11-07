@@ -1,9 +1,8 @@
 {
-  "versionCode": 22,
-  "versionName": "2.5.0",
-  "notes": "1、新增在线升级：有新版本时自动弹窗，可选「立即更新 / 稍后 / 忽略此版本」；忽略后同一版本不再打扰，等下个版本再提示。\n2、设置页新增「关于 / 检查更新」，可随时手动检查；启动时也会自动查一次，12 小时内不重复。\n3、应用内下载完成后先校验安装包签名与本机一致，才允许安装，防止更新地址被劫持。\n4、升级为覆盖安装，聊天记录与已下载模型都会保留。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.0/tingyin-2.5.0.apk",
+  "versionCode": 23,
+  "versionName": "2.5.1",
+  "notes": "1、区分说话人固定为 A / B / C / D 四个人，第五个人会自动归到最像的那一位，不再出现 E/F/G/H。\n2、长按气泡左侧的字母，可以直接改成名字（如「老马」「客户」），最多 4 个字；设置 › 重命名说话人 里也能统一改。\n3、历史记录里每条语音都会标出是谁说的：「A语音」「老马语音」，配色跟着说话人走。\n4、设置新增「仅 Wi-Fi 下下载更新包」：用移动数据时先询问，不会误跑流量。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.1/tingyin-2.5.1.apk",
   "pageUrl": "",
-  "size": 130404809,
-  "force": false
+  "size": 130404841
 }
