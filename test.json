@@ -1,9 +1,8 @@
 {
-  "versionCode": 23,
-  "versionName": "2.5.0-demo",
-  "notes": "这是一条测试清单，用来验证升级弹窗。点「立即更新」会重新下载并覆盖安装同一个包。\n\n正式清单是 update.json。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.0/tingyin-2.5.0.apk",
+  "versionCode": 24,
+  "versionName": "2.5.1-demo",
+  "notes": "这是一条测试清单，用来验证升级弹窗和下载安装流程。点「立即更新」会重新下载并覆盖安装同一个包。\n\n正式清单是 update.json。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.1/tingyin-2.5.1.apk",
   "pageUrl": "",
-  "size": 130404809,
-  "force": false
+  "size": 130404841
 }
