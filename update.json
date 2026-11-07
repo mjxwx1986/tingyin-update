@@ -1,8 +1,8 @@
 {
-  "versionCode": 27,
-  "versionName": "2.6.1",
-  "notes": "1、修复：往上翻看记录时，新文字不再把列表拽回最底部，位置不会被抢走。\n2、新增右下角向下箭头：想回到最新一句点一下即可，滑到底部会自动消失。\n3、识别时列表仍会自动跟到最新，只有你主动上滑翻看才停下。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.1/tingyin-2.6.1.apk",
+  "versionCode": 28,
+  "versionName": "2.6.2",
+  "notes": "下载更快更聪明：\n1、开始下载前先同时测几条线路的实时速度，直接挑最快的那条，不再先试慢线。\n2、改用 4 条连接同时下载同一个包，单连接被限速时也能跑满带宽。\n3、换线更果断：4 秒内明显偏慢就换，掉到 80KB/s 以下当场换。\n4、换线不白下，已经下好的分块接着用。\n5、下载框会显示「正在测最快线路…」，几秒后开始正常下载。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.2/tingyin-2.6.2.apk",
   "pageUrl": "",
   "size": 130421397
 }
