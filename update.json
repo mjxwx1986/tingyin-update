@@ -1,8 +1,8 @@
 {
-  "versionCode": 30,
-  "versionName": "2.6.4",
-  "notes": "这一版把三件事一起修好：\n1、打开 App 就自动检查更新，不用再手动点（原来 12 小时才查一次）。\n2、一声短促的话不再被识别成两个重复的字，如「嗯嗯」「看看」会折叠成单字。\n3、升级清单改用实时线路 + 四源并行 + 时间戳绕缓存，不再被旧缓存挡住。\n\n如果这一版是靠浏览器直链装的，装好后以后每次打开都会自动提示更新。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.4/tingyin-2.6.4.apk",
+  "versionCode": 31,
+  "versionName": "2.6.5",
+  "notes": "新增「AI 字幕优化（云端）」，默认关闭。\n\n在「设置 → API Key 与接口设置」里填一个免费大模型的 Key（默认智谱 GLM-4-Flash，官方 0 元模型，需实名），打开开关后，每句字幕会结合最近 3 句上下文交给模型做同音错字纠正、补标点、去重复语气词；改过的句子尾部有一个浅灰 AI 角标。\n\n· 可改成任何 OpenAI 兼容服务，换服务商不用重装 App\n· 有「测试连接」按钮，填完 Key 能当场验证\n· 不阻塞收音：没网 / 超时 / Key 失效自动保留原字幕，模型跑偏或扩写也会被拦下\n· 注意：开启后字幕文本会发送给你填的服务商，涉密场合请勿开启；Key 只存在本机\n\n这一版同时包含 2.6.3 / 2.6.4 的修复：一声不再出两个重复字、打开 App 自动检查更新、清单四源实时取最新。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.5/tingyin-2.6.5.apk",
   "pageUrl": "",
   "size": 130421397
 }
