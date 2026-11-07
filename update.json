@@ -1,8 +1,8 @@
 {
-  "versionCode": 24,
-  "versionName": "2.5.2",
-  "notes": "1、去掉设置里的「重命名说话人」入口，只保留长按气泡左侧字母改名，少一层菜单。\n2、说话人名字当天有效：换一天打开，自动回到 A / B / C / D，避免今天 A 是老马、明天 A 是客户的情况。\n3、其余同上一版：声纹固定 4 人、历史记录标注「谁语音」、更新包仅 Wi-Fi 下载。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.2/tingyin-2.5.2.apk",
+  "versionCode": 25,
+  "versionName": "2.5.3",
+  "notes": "1、修复下载进度一直卡在 100%：之前把\"已写入磁盘的大小\"当总量，现在用安装包真实大小计算，并显示「已下载 / 总量」「百分比」「下载速度」「预计剩余时间」。\n2、下载加速：自动走加速线路（实测比直连 GitHub 快约 8 倍），一条线路太慢会自动换下一条，断线可续传，不用从头再来。\n3、下载框新增「浏览器下载」按钮：不想等可以交给浏览器下，支持多线程与断点续传。\n4、下载完成后会显示「正在校验安装包…」，校验签名通过才调起安装。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.5.3/tingyin-2.5.3.apk",
   "pageUrl": "",
-  "size": 130404841
+  "size": 130404845
 }
