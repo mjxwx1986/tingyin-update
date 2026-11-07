@@ -1,8 +1,8 @@
 {
-  "versionCode": 29,
-  "versionName": "2.6.3",
-  "notes": "修复短促一声被识别成两遍：\n1、句首缓冲只保留静音，不再把上一段语音重复拼进新句子。\n2、定句或暂停后，还在排队中的临时识别结果立即作废，不会再和正式字幕同时留在屏幕上。\n3、半秒以内的短音不再出临时字幕，直接给定句结果。\n4、极短时间内重复出现的同一句自动去重，一声「啊」只出一条。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.3/tingyin-2.6.3.apk",
+  "versionCode": 30,
+  "versionName": "2.6.4",
+  "notes": "这一版包含上一条修复，并解决「点了检查更新却提示已是最新」：\n1、短促一声（如喊「啊」）不再出两遍字幕。\n2、升级清单改用实测实时的线路，四个来源并行取最新，不再被镜像缓存挡住。\n3、每次检查都带唯一时间戳，绕开运营商与 CDN 的旧缓存。\n4、慢线路最多等 6 秒，检查更新不再空转。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.4/tingyin-2.6.4.apk",
   "pageUrl": "",
   "size": 130421397
 }
