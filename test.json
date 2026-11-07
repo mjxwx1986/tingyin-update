@@ -1,8 +1,8 @@
 {
-  "versionCode": 28,
-  "versionName": "2.6.1-demo",
+  "versionCode": 29,
+  "versionName": "2.6.2-demo",
   "notes": "测试清单，用来验证升级弹窗与下载流程。点「立即更新」会重新下载并覆盖安装同一个包。\n\n正式清单是 update.json。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.1/tingyin-2.6.1.apk",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.2/tingyin-2.6.2.apk",
   "pageUrl": "",
   "size": 130421397
 }
