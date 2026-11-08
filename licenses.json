@@ -1,6 +1,13 @@
 {
-  "rev": 4,
+  "rev": 5,
   "note": "听音在线授权清单，由 activate.py 维护",
-  "items": {},
+  "items": {
+    "c0bb08479cabd43881cd": {
+      "exp": 0,
+      "sig": "b0fce720c738feff",
+      "note": "2026-11-08 用户开通",
+      "at": "2026-11-08"
+    }
+  },
   "updated": "2026-11-08"
 }
