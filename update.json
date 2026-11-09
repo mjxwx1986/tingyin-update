@@ -1,8 +1,8 @@
 {
-  "versionCode": 56,
-  "versionName": "2.6.7.22",
-  "notes": "v2.6.7.22 · AI 字幕优化默认模型升级为智谱 GLM-4.7-Flash\n\n· 把「AI 字幕优化（云端校对）」的默认模型从 GLM-4-Flash 换成 GLM-4.7-Flash：官方免费（需实名）、200K 上下文、中文同音字 / 标点校对更强一档。识别本体（本地 Paraformer）不变，只是把送去云端做校对的「刀」换快了。\n· 谁会受影响：在设置里没手填过模型名的用户，升级后自动用上新模型；之前手填过模型名（如填了 glm-4-flash）的，仍用自己填的——想升级需把模型名清空或改成 glm-4.7-flash。接口地址、OpenAI 兼容调用、校对提示词都没变。\n· AI 字幕优化仍是默认关闭，需自己在设置里开启并填 Key 才生效；没网 / 超时 / Key 失效会自动保留原字幕，不影响收音。\n\n其余与 2.6.7.21 一致：远场专项打磨（AGC / 噪声抑制 / VAD 自适应 / 高通）、手表未连接不挂通知、页面回收重建接管录音线程、声纹、在线激活与升级不变。\n\n升级说明：只升手机端到 2.6.7.22 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.22/tingyin-2.6.7.22.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.22",
+  "versionCode": 58,
+  "versionName": "2.6.7.24",
+  "notes": "v2.6.7.24 · 默认校对模型恢复为 GLM-4-Flash（官方 0 元模型）\n\n· 模型回退：把「AI 字幕优化（云端校对）」的默认模型从 GLM-4.7-Flash 退回 GLM-4-Flash。GL.4.7-Flash 免费额度更紧、密集逐句校对时容易触发 HTTP 429 限流导致校对不生效；GLM-4-Flash 是官方 0 元模型，额度更稳。识别本体（本地 Paraformer）不变，只是把送去云端做校对的模型换回原来的。\n· 谁会受影响：在设置里没手填过模型名的用户，升级后自动用回 GLM-4-Flash；之前手填过模型名的，仍用自己填的——想跟随默认就清空模型名。接口地址、OpenAI 兼容调用、校对提示词都没变。\n· 保留上版的修复：在「AI 字幕优化 · 接口设置」里填好 Key 点保存即自动开启校对（清空 Key 才关闭），不用再单独去拨「开启字幕校对」总开关。\n· 智谱 Key 大小写敏感，建议从后台一键复制，别手打；没网 / 超时 / Key 失效会自动保留原字幕，不影响收音。\n\n其余与 2.6.7.21 一致：远场专项打磨（AGC / 噪声抑制 / VAD 自适应 / 高通）、手表未连接不挂通知、页面回收重建接管录音线程、声纹、在线激活与升级不变。\n\n升级说明：只升手机端到 2.6.7.24 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.24/tingyin-2.6.7.24.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.24",
   "size": 55988083
 }
