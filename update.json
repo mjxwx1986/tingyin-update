@@ -1,8 +1,8 @@
 {
-  "versionCode": 59,
-  "versionName": "2.6.7.25",
-  "notes": "v2.6.7.25 · 冷启动优化：识别器初始化与界面加载并行，体感更快\n\n· 启动提速：原来打开 App 后「初始化识别器」要等约 3 秒才出字幕。现在把模型加载的触发点前移，与界面 inflate / 聊天记录反序列化并行；同时把「识别器」与「断句 VAD」两个互不依赖的初始化改为并行执行。两项叠加，冷启动体感等待约省 0.6–1 秒（约 3 秒 → 约 2–2.2 秒）。\n· 不改变识别效果：本地 Paraformer 模型、VAD 参数、解码方式都不变，只是把初始化顺序/并发调了一下，识别准确率与延迟不受影响。\n· 仅手机端：手表 1.2.6 不用动。\n\n其余与 2.6.7.24 一致：默认校对模型 GLM-4-Flash（官方 0 元）、远场专项打磨（AGC / 噪声抑制 / VAD 自适应 / 高通）、手表未连接不挂通知、页面回收重建接管录音线程、声纹、填 Key 保存即开启校对、在线激活与升级不变。\n\n升级说明：只升手机端到 2.6.7.25 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.25/tingyin-2.6.7.25.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.25",
+  "versionCode": 60,
+  "versionName": "2.6.7.26",
+  "notes": "v2.6.7.26 · 离线识别引擎默认切换为 SenseVoice（多语种）\n\n· 默认引擎升级：离线语音识别从 Paraformer 切换为 SenseVoice（阿里开源，sherpa-onnx 同框架）。SenseVoice 是多语种非自回归模型，中文准确率更高、同音字/远场更稳，自带标点与逆文本规范化（「二零二六」→「2026」），并支持粤语/英语/日语/韩语自动判别。\n· 自动迁移：升级后，旧版「普通话 = Paraformer」默认项会自动升级到 SenseVoice，无需手动切换。仍可在设置里选回 Paraformer（小模型，约 82MB，适合低端机/快速下载）。\n· 首次需下载：SenseVoice 模型约 190MB（比 Paraformer 的 82MB 大），首次使用会在 Wi-Fi 下按需下载，请耐心等待。\n· 字幕更干净：自动剥离 SenseVoice 输出的 [Laughter]/[Applause]/[Breath] 等事件标签。\n· 加载稍慢：模型更大，冷启动「初始化识别器」时间会比之前略长（之前做的并行初始化优化仍生效）。\n· 其余不变：本地识别（离线、免 API 费）、AI 校对（GLM-4-Flash，可关）、远场专项打磨、手表 1.2.6、填 Key 保存即开启校对、页面回收接管录音线程等均与 2.6.7.25 一致。\n\n升级说明：只升手机端到 2.6.7.26 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。首次进入会提示下载 SenseVoice 模型（约 190MB，建议 Wi-Fi）。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.26/tingyin-2.6.7.26.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.26",
   "size": 55988087
 }
