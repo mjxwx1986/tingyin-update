@@ -1,8 +1,8 @@
 {
-  "versionCode": 63,
-  "versionName": "2.6.7.29",
-  "notes": "v2.6.7.29 · 修复「识别语种」弹窗看不到勾选框\n\n· 修复：上一版点开「识别语种（可多选）」只显示说明文字和按钮、看不到 5 个复选框。原因是弹窗同时用了系统 setMessage + setMultiChoiceItems，在部分 ROM/主题下 message 区会把列表整块挤掉。现改为自绘布局（setView），5 个复选框必定显示，且文字颜色自动跟随深/浅色主题。\n· 新增两个一键预设：「仅普通话 + 粤语」（你要的组合，点一下就勾好）和「全选（不限制）」。\n· 功能不变：2.6.7.28 的语种白名单过滤逻辑照旧（保持 auto 自动判语种，没勾中的句子不出字幕），默认全选 = 旧行为，改完立即生效。\n· 其余与 2.6.7.28 一致：本地离线识别（免 API 费）、AI 校对（GLM-4-Flash，可关）、远场专项打磨、手表 1.2.6、填 Key 保存即开启校对、并行初始化等。\n\n升级说明：只升手机端到 2.6.7.29 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史、已保存的语种勾选都保留。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.29/tingyin-2.6.7.29.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.29",
+  "versionCode": 64,
+  "versionName": "2.6.7.30",
+  "notes": "v2.6.7.30 · 清掉满屏标点气泡 + 移除 Paraformer 中文模型\n\n· 修复：SenseVoice 对静音、呼吸、噪声段会只吐出「·」「。」这类纯标点，或残留 <|zh|>、<|NEUTRAL|> 等控制/事件标签，导致字幕里冒出一串只有符号的空气泡。现统一剥离所有尖括号控制标签与事件标签；一句里若没有任何汉字、字母或数字（纯标点/纯符号/纯空白）则整句丢弃，不再生成气泡。正常文字不受影响。\n· 移除：设置里的「Paraformer 中文模型」选项与「普通话模型已就位 / 一键下载 / 一键删除」状态行。离线识别现在只保留 SenseVoice 多语种模型（含普通话、粤语、英语、日语、韩语）。\n· 自动清理：升级后首次打开会在后台一次性删除旧的 Paraformer 大模型文件（约 82MB）及下载分片，释放空间。只删模型本体，同目录内置的 VAD 断句模型与 tokens 会保留，不影响收音。\n· 其余不变：识别语种多选白名单、默认全选、远场 AGC/NS/VAD、AI 校对（GLM-4-Flash，可关）、填 Key 保存即开启校对、并行初始化、手表 1.2.6 等全部保留。\n\n升级说明：只升手机端到 2.6.7.30 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史、已保存的语种勾选都保留。升级后设置里「已下载模型」的占用数字会变小，属正常。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.30/tingyin-2.6.7.30.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.30",
   "size": 56004471
 }
