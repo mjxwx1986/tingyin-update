@@ -1,8 +1,8 @@
 {
-  "versionCode": 61,
-  "versionName": "2.6.7.27",
-  "notes": "v2.6.7.27 · 修正语言包选择标签（SenseVoice 含普通话）\n\n· 界面文案修正：语言/方言选择里「粤语 / 英语 / 日语 / 韩语」改为「普通话 / 粤语 / 英语 / 日语 / 韩语」。SenseVoice 模型名为 sense-voice-zh-en-ja-ko-yue，zh（中文/普通话）是主语言，原标签漏写普通话，易误以为不含普通话。\n· 功能不变：2.6.7.26 起默认引擎已是 SenseVoice（含普通话，自动判别语种），本次仅修正显示文字，未改动识别逻辑与模型。\n· 其余与 2.6.7.26 一致：本地离线识别（免 API 费）、AI 校对（GLM-4-Flash，可关）、远场专项打磨、手表 1.2.6、填 Key 保存即开启校对、并行初始化、垃圾回收线程接管等。\n\n升级说明：只升手机端到 2.6.7.27 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.27/tingyin-2.6.7.27.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.27",
-  "size": 55988087
+  "versionCode": 62,
+  "versionName": "2.6.7.28",
+  "notes": "v2.6.7.28 · 新增「识别语种」多选（可只留普通话和粤语）\n\n· 新功能：设置 → 大模型 → 识别语种，点开可勾选 5 个语种（普通话 / 粤语 / 英语 / 日语 / 韩语），只让勾中的语种出字幕。例如只勾「普通话 + 粤语」，英语/日语/韩语的句子会自动丢弃，不占字幕、不送 AI 校对。改完立即生效，无需重启或重新下载模型。\n· 默认全选（不限制），与旧版行为完全一致；升级后不用任何设置。\n· 实现说明：SenseVoice 引擎的 language 参数只能填单个语种，无法原生限制「一组语种」；因此仍用 auto 自动判别每句话的语种，再按勾选白名单过滤结果。\n· 兜底：一个语种都不勾会自动恢复全选；未知/空语种标签一律放行，不会误杀字幕；Paraformer（普通话小模型）不受影响。\n· 其余与 2.6.7.27 一致：本地离线识别（免 API 费）、AI 校对（GLM-4-Flash，可关）、远场专项打磨、手表 1.2.6、填 Key 保存即开启校对、并行初始化等。\n\n升级说明：只升手机端到 2.6.7.28 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.28/tingyin-2.6.7.28.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.28",
+  "size": 56004471
 }
