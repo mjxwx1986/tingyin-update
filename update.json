@@ -1,8 +1,8 @@
 {
-  "versionCode": 60,
-  "versionName": "2.6.7.26",
-  "notes": "v2.6.7.26 · 离线识别引擎默认切换为 SenseVoice（多语种）\n\n· 默认引擎升级：离线语音识别从 Paraformer 切换为 SenseVoice（阿里开源，sherpa-onnx 同框架）。SenseVoice 是多语种非自回归模型，中文准确率更高、同音字/远场更稳，自带标点与逆文本规范化（「二零二六」→「2026」），并支持粤语/英语/日语/韩语自动判别。\n· 自动迁移：升级后，旧版「普通话 = Paraformer」默认项会自动升级到 SenseVoice，无需手动切换。仍可在设置里选回 Paraformer（小模型，约 82MB，适合低端机/快速下载）。\n· 首次需下载：SenseVoice 模型约 190MB（比 Paraformer 的 82MB 大），首次使用会在 Wi-Fi 下按需下载，请耐心等待。\n· 字幕更干净：自动剥离 SenseVoice 输出的 [Laughter]/[Applause]/[Breath] 等事件标签。\n· 加载稍慢：模型更大，冷启动「初始化识别器」时间会比之前略长（之前做的并行初始化优化仍生效）。\n· 其余不变：本地识别（离线、免 API 费）、AI 校对（GLM-4-Flash，可关）、远场专项打磨、手表 1.2.6、填 Key 保存即开启校对、页面回收接管录音线程等均与 2.6.7.25 一致。\n\n升级说明：只升手机端到 2.6.7.26 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。首次进入会提示下载 SenseVoice 模型（约 190MB，建议 Wi-Fi）。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.26/tingyin-2.6.7.26.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.26",
+  "versionCode": 61,
+  "versionName": "2.6.7.27",
+  "notes": "v2.6.7.27 · 修正语言包选择标签（SenseVoice 含普通话）\n\n· 界面文案修正：语言/方言选择里「粤语 / 英语 / 日语 / 韩语」改为「普通话 / 粤语 / 英语 / 日语 / 韩语」。SenseVoice 模型名为 sense-voice-zh-en-ja-ko-yue，zh（中文/普通话）是主语言，原标签漏写普通话，易误以为不含普通话。\n· 功能不变：2.6.7.26 起默认引擎已是 SenseVoice（含普通话，自动判别语种），本次仅修正显示文字，未改动识别逻辑与模型。\n· 其余与 2.6.7.26 一致：本地离线识别（免 API 费）、AI 校对（GLM-4-Flash，可关）、远场专项打磨、手表 1.2.6、填 Key 保存即开启校对、并行初始化、垃圾回收线程接管等。\n\n升级说明：只升手机端到 2.6.7.27 即可，手表 1.2.6 不用动。签名一致可直接覆盖安装，配对记录、字号、历史都保留。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.27/tingyin-2.6.7.27.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.27",
   "size": 55988087
 }
