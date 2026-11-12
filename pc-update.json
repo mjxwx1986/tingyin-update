@@ -1,8 +1,8 @@
 {
-  "version": "1.0.13",
-  "tag": "tingyin-pc-v1.0.13",
-  "zip": "https://github.com/mjxwx1986/tingyin-update/releases/download/tingyin-pc-v1.0.13/tingyin-pc.zip",
-  "size": 75799012,
-  "notes": "PC 悬浮字幕 v1.0.13（防破解加固）\n\n· 防破解 / 反调试 / 自校验加固层（专业加固，低回归风险）：\n  - 反调试：检测到本进程被调试（IsDebuggerPresent / CheckRemoteDebuggerPresent）即静默退出，不给附加调试器的机会。\n  - 反逆向工具：启动期扫描进程列表，发现 x64dbg / dnSpy / CheatEngine / IDA / Ghidra / OllyDbg / PEiD / ResourceHacker / Frida / WinDbg 等常见调试·反汇编·内存修改工具即静默退出。\n  - 密钥分片存储：授权密钥不再以连续 32 字节数组暴露，改为 4 段 base64 散落存储、运行时拼接还原。\n  - 防 patch 自校验：启动时用内置用例确认校验链路未被改成「恒 ok / 恒真」，密钥指纹不匹配即拒运行。\n· 诚实说明安全边界：本应用授权为「本地对称 HMAC + 本地签发」，在无服务端参与时任何客户端方案都只能提高逆向门槛、无法做到不可伪造。根治需把签发迁到服务端（非对称签名 + 在线会话）或改用 Nuitka 编成原生二进制——列入后续规划。\n· 含 v1.0.12 全部修复：自更新「已经在运行中」、下载进度反馈；以及任务栏图标、灵敏度 低/中/高、检查更新、日历看记录 + 导出 txt、字幕双击修正、粤语/英文翻译、输入音量条 + 实时电平、license.json HMAC 校验等。\n",
-  "updated": 1794468655
+  "version": "1.0.14",
+  "tag": "tingyin-pc-v1.0.14",
+  "zip": "https://github.com/mjxwx1986/tingyin-update/releases/download/tingyin-pc-v1.0.14/tingyin-pc.zip",
+  "size": 75799244,
+  "notes": "PC 悬浮字幕 v1.0.14（紧急修复 v1.0.13 启动崩溃）\n\n· 修复 v1.0.13 在 Windows 上双击无反应、程序不出现：反调试检查里 `CheckRemoteDebuggerPresent` 的回参误用了 1 字节 c_bool，而系统要写 4 字节 BOOL*，导致写入越界、进程在创建窗口前就崩了。已改为 4 字节 c_int 并显式声明 argtypes/restype。\n· 加固层改为 fail-open：反调试 / 反逆向工具 / 自校验任何一步若遇到非预期异常，一律放行，绝不让加固逻辑本身阻断正常启动。\n· 其余同 v1.0.13：防破解加固（反调试、反逆向工具、密钥分片存储、防 patch 自校验）、v1.0.12 的自更新修复与下载进度反馈；任务栏图标、灵敏度 低/中/高、检查更新、日历看记录 + 导出 txt、字幕双击修正、粤语/英文翻译、输入音量条 + 实时电平、license.json HMAC 校验等。\n",
+  "updated": 1794469338
 }
