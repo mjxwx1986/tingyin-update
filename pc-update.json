@@ -1,8 +1,8 @@
 {
-  "version": "1.0.12",
-  "tag": "tingyin-pc-v1.0.12",
-  "zip": "https://github.com/mjxwx1986/tingyin-update/releases/download/tingyin-pc-v1.0.12/tingyin-pc.zip",
-  "size": 75797381,
-  "notes": "PC 悬浮字幕 v1.0.12（自更新修复）\n\n· 修复「检查更新下载到 100% 后弹『听音字幕已经在运行中』、更新卡死」：根因是自动更新拉起的新进程和旧进程抢同一个单实例锁，被误判为重复启动而退出，导致 exe 永远没被替换。现已让更新进程跳过单实例检测、复制完成后自动拉起新版本并退出，更新体验顺滑。\n· 修复「下载进度只突然跳到 100%、看不到过程」：服务器未返回 Content-Length 时改为实时显示「已下载 XX MB」；点「下载并安装」后立即显示「正在下载更新…」，不再出现长时间 0% 后突然满格。\n· 其余同 v1.0.11：任务栏图标、灵敏度 低/中/高、检查更新、日历看记录 + 导出 txt、字幕双击修正、粤语/英文翻译、输入音量条 + 实时电平、license.json HMAC 校验等。\n",
-  "updated": 1794467953
+  "version": "1.0.13",
+  "tag": "tingyin-pc-v1.0.13",
+  "zip": "https://github.com/mjxwx1986/tingyin-update/releases/download/tingyin-pc-v1.0.13/tingyin-pc.zip",
+  "size": 75799012,
+  "notes": "PC 悬浮字幕 v1.0.13（防破解加固）\n\n· 防破解 / 反调试 / 自校验加固层（专业加固，低回归风险）：\n  - 反调试：检测到本进程被调试（IsDebuggerPresent / CheckRemoteDebuggerPresent）即静默退出，不给附加调试器的机会。\n  - 反逆向工具：启动期扫描进程列表，发现 x64dbg / dnSpy / CheatEngine / IDA / Ghidra / OllyDbg / PEiD / ResourceHacker / Frida / WinDbg 等常见调试·反汇编·内存修改工具即静默退出。\n  - 密钥分片存储：授权密钥不再以连续 32 字节数组暴露，改为 4 段 base64 散落存储、运行时拼接还原。\n  - 防 patch 自校验：启动时用内置用例确认校验链路未被改成「恒 ok / 恒真」，密钥指纹不匹配即拒运行。\n· 诚实说明安全边界：本应用授权为「本地对称 HMAC + 本地签发」，在无服务端参与时任何客户端方案都只能提高逆向门槛、无法做到不可伪造。根治需把签发迁到服务端（非对称签名 + 在线会话）或改用 Nuitka 编成原生二进制——列入后续规划。\n· 含 v1.0.12 全部修复：自更新「已经在运行中」、下载进度反馈；以及任务栏图标、灵敏度 低/中/高、检查更新、日历看记录 + 导出 txt、字幕双击修正、粤语/英文翻译、输入音量条 + 实时电平、license.json HMAC 校验等。\n",
+  "updated": 1794468655
 }
