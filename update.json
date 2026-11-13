@@ -1,8 +1,8 @@
 {
-  "versionCode": 80,
-  "versionName": "2.6.7.46",
-  "notes": "v2.6.7.46 · 手机端改动（手表联动再修复）\n\n· 彻底修复「手表离开很久后重新打开：手表已重新连上并开始收音，手机却一直停在『已激活·点此收音』、不自动起麦，必须重启手机听音才恢复」的问题。\n· 根因：① 手表发来的 start_rec 命令在『读蓝牙的守护线程』里直接调用了 activity 的 requestPermissions/UI，一旦抛异常被读循环 catch 吞掉，startMic 永远到不了，手机就不收音；② 久离断线时 onWatchGone 把 bgMic/micShouldRun 置假，手表重连后若 App 只是被切到后台没被杀，手动打开走 onResume 而非 onCreate，而 resumeMicIfNeeded 要求这两个标志都为真，于是停在『已激活·点此收音』。\n· 修复：① start_rec 改为切到主线程执行，权限/UI 调用不再抛异常；② 手表（重）连上一刻主动自愈拉起手机收音（healWatchRecording），不依赖 start_rec 时序；③ onResume 增加『连着却没在收』的自愈，不必杀进程重启。三处叠加，久离重连后手机自动转字幕。\n· 沿用 2.6.7.45 的监听端点自愈与 2.6.7.44 的麦克风被静音本地橙色提示。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响；已装 2.6.7 及之后任意版本均可直接覆盖。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.46/tingyin-2.6.7.46.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.46",
+  "versionCode": 81,
+  "versionName": "2.6.7.47",
+  "notes": "v2.6.7.47 · 手机端改动（手表重连·真因修复）\n\n· 彻底修复「手表离开很久后再回来：手表一直显示『连接断开·正在重连』、死活连不上手机，必须把手机听音 App 重启才恢复」的问题。\n· 真因（与 45/46 不同）：手机是蓝牙 RFCOMM 服务端，手表是客户端主动连手机。旧逻辑里，手表镜像开关开启时，手机端服务只在『已连接』时才提升为前台服务，断开后降为普通后台服务——国产 ROM（小米/VIVO 等）会把后台服务杀掉，监听端点随之丢失；你『离开了很久』= 手机 App 被切后台很久被杀，手表回来后手机根本没有在监听，自然一直重连失败，唯有重启手机 App（重建监听）才恢复。\n· 修复（三处）：① 手表镜像开关开启时，手机端服务【常驻前台】，不再断开就降后台被杀（会多一条常驻通知『听音·手表镜像·等待手表连接』，关掉镜像开关即消失）；② App 回到前台（onResume）时兜底确保监听端点活着，即使服务曾被杀也能立刻拉起/重建；③ 监听端点卡死时整段重建（带重试、并绕开 Android 『close 解不开 accept 阻塞』的坑）。\n· 沿用 2.6.7.45 的监听端点自愈、2.6.7.46 的重连自愈与 2.6.7.44 的麦克风被静音本地橙色提示。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响；已装 2.6.7 及之后任意版本均可直接覆盖。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.47/tingyin-2.6.7.47.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.47",
   "size": 56005772
 }
