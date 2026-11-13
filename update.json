@@ -1,8 +1,8 @@
 {
-  "versionCode": 77,
-  "versionName": "2.6.7.43",
-  "notes": "v2.6.7.43 · 手机端改动\n\n· 修复首次更新时，下载完成后被要求开启「安装未知应用」权限，授权返回后又要重新下载一遍的问题：现在包下好就记录「待安装」，授权回来自动继续安装，「检查更新」与「立即更新」也优先复用已下好的包。\n· 安装包仍在时绝不重复下载；升级成功后自动清理缓存的安装包。\n· 沿用 2.6.7.42 的全部修复：手表久离重连卡死、「点此收音」点击无效、手表开 App 无界面自动起麦。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.43/tingyin-2.6.7.43.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.43",
-  "size": 56005772
+  "versionCode": 78,
+  "versionName": "2.6.7.44",
+  "notes": "v2.6.7.44 · 手机端改动\n\n· 新增「麦克风被静音」本地状态提示：当录音线程连续检测到麦克风输出全 0（通常是系统/厂商后台管控把麦克风掐掉）时，手机顶部状态标签会由绿色「正在收音」直接变成橙色「⚠ 麦克风被静音·请去设置允许麦克风」，无需再靠手表或来回截图判断。\n· 一旦麦克风恢复正常，标签自动变回绿色「正在收音」。\n· 说明：本版只新增提示，不改变任何录音 / 识别 / 模型逻辑；悬浮窗开关与本 App 无关（App 未使用系统浮层），无需为此开启。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响；已装 2.6.7 及之后任意版本均可直接覆盖。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.44/tingyin-2.6.7.44.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.44",
+  "size": 56005768
 }
