@@ -1,8 +1,8 @@
 {
-  "versionCode": 75,
-  "versionName": "2.6.7.41",
-  "notes": "v2.6.7.41 · 手机端改动\n\n· 修复分屏 / 退出 App 时的 native 闪退（SIGSEGV）：根因是 onDestroy 释放了 VAD 的 native 对象，而仍在跑的收音线程继续调用 acceptWaveform 导致空指针崩。改为收音线程独占一份 Vad、由线程自身 finally 释放，onDestroy 只在确认无存活收音线程时才释放静态引用，并加锁保护竞态。\n· 新增「预览出字」：说话过程中屏幕下方实时显示正在识别的灰色半句，整句定稿后并入正式字幕，出字更跟手。\n· 手表端建议同步升级到 1.2.7，才能看到手表侧的预览出字。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.41/tingyin-2.6.7.41.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.41",
-  "size": 56005811
+  "versionCode": 76,
+  "versionName": "2.6.7.42",
+  "notes": "v2.6.7.42 · 手机端改动\n\n· 修复手表久离后回到范围一直「连接断开·正在重连」无法恢复：重连前刷新蓝牙发现缓存并加重试。\n· 修复手机「已激活·点此收音」点击无反应：清理残留死线程、重置模型准备标志并显式重走加载流程。\n· 修复手表打开 App 不再需要手机在前台才能自动触发收音（改为静态分发，无界面也能后台起麦）。\n· 优化内置资源结构与加载流程，提升首次启动的稳定性。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.42/tingyin-2.6.7.42.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.42",
+  "size": 56005772
 }
