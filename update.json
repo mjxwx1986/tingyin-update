@@ -1,8 +1,8 @@
 {
-  "versionCode": 82,
-  "versionName": "2.6.7.48",
-  "notes": "v2.6.7.48 · 手机端改动（手表连上后手机麦克风后台被静音·无声音 + 连接稳定性 + 诊断日志）\n\n· 修复「手表连上手机后，手表显示『手机收音中』，但手机麦克风实际没声音、提示『请允许后台收音』」的问题。\n  根因有二：① 小米 / VIVO 等国产 ROM 在手机息屏 / 切后台（戴手表看字幕的典型场景）时会掐掉麦克风，需把麦克风权限设为『始终允许』并把听音的省电策略设为『无限制』（本版新增一键引导）；② 代码隐患：MicService 的前台服务若带 microphone 类型启动失败，会悄悄降级成『不带类型的前台服务』，而 Android 14 上无 microphone 类型的前台服务在后台会被系统静音——本版已修掉这个悄悄降级，并记录日志。\n· 新增引导：检测到麦克风被静音时，App 内橙色提示『麦克风被静音·点此去设置开启』可直接点击，一键跳到本 App 的系统设置页，把麦克风设为始终允许（不再需自己翻菜单）。\n· 连接稳定性：上一版 2.6.7.47 的『无连接超 3 分钟就强制 stop/start 同一蓝牙 UUID 监听』会破坏 SDP 记录稳定，导致手表久离回来 SDP 查询失败、反而连不上（用户抓到的日志正是『监听端点无连接存活超 630518ms 强制重建监听』）。本版改为【持续稳定监听 + 服务常驻前台】，只在监听端点真的丢失或蓝牙开关变化时才重建，避免 SDP 不稳定。\n· 大量诊断日志：WatchLink / WatchHost / MicService 关键节点（监听 listen 成功 / 失败、手表连上 attach、断线、服务升降级、前台服务是否降级）现已打印，便于后续精确定位。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响；已装 2.6.7 及之后任意版本均可直接覆盖。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.48/tingyin-2.6.7.48.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.48",
+  "versionCode": 83,
+  "versionName": "2.6.7.49",
+  "notes": "v2.6.7.49 · 手机端改动（修复：手表一连上就被断开、无限重连的事故）\n\n· 修复 2.6.7.48 引入的严重回归：手表一连上手机就立即被断开、随后无限『连接断开·正在重连』（约每 3 秒循环一次），现象上和『必须重启手机听音才正常』一致。\n  根因链：2.6.7.48 把 ensureHostAlive 改成『只要 server==null 就整段重建监听』，但手表连上后 server 本就为 null（accept 成功后即关闭监听端点，属正常态）；手表一连上，App 侧经由『连接→healWatchRecording→WatchHostService.start→onStartCommand→ensureHostAlive』调用链触发了重建，把活连接掐断，手表只能反复重连。\n  修复：ensureHostAlive 现在只在『完全没有在监听（hosting=false）』时才拉起监听；只要手表连着，无论 server 是否为 null 都绝不重建。另：看门狗保留『未连接时监听端点卡死(server 阻塞过久) 就单独关闭 server 兜底重听』的逻辑，同样不碰活连接。\n· 这是此前几版反复出现『手表久离/重启才连得上』的真正根因，已从代码层面根除，正常连接不再依赖用户重启手机。\n· 升级说明：直接覆盖安装即可，签名证书不变，机器码与授权不受影响；已装 2.6.7 及之后任意版本均可直接覆盖。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.49/tingyin-2.6.7.49.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.49",
   "size": 56005772
 }
