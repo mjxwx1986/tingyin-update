@@ -1,8 +1,8 @@
 {
-  "versionCode": 13,
-  "versionName": "1.2.8",
-  "notes": "听音手表 1.2.8 · 修复久离重连卡死\n\n· 修复手机离开很久、手表回到范围后一直「连接断开·正在重连」无法恢复：连接前刷新蓝牙发现缓存并加重试。\n· 与手机 2.6.7.42 配套：手机端修复后，手表打开 App 即可在无界面情况下自动触发手机后台收音。\n· 升级说明：手表端覆盖安装到 1.2.8 即可，签名一致可直接覆盖，配对地址与历史都保留。",
-  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.8.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.8",
-  "size": 661408
+  "versionCode": 14,
+  "versionName": "1.2.9",
+  "notes": "听音手表 1.2.9 · 修复更新授权后重复下载\n\n· 修复下载完成后被要求开启「安装未知应用」权限、返回又要从头下载一遍的问题：已下好的包会保留，授权回来自动继续安装，「检查更新」也优先复用，不再重复下载。\n· 沿用 1.2.8 的久离重连修复（刷新蓝牙发现缓存 + 重试）。\n· 升级说明：覆盖安装到 1.2.9 即可，签名一致，配对地址与历史都保留。",
+  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.9.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.9",
+  "size": 662416
 }
