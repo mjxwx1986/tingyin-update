@@ -1,8 +1,8 @@
 {
-  "versionCode": 14,
-  "versionName": "1.2.9",
-  "notes": "听音手表 1.2.9 · 修复更新授权后重复下载\n\n· 修复下载完成后被要求开启「安装未知应用」权限、返回又要从头下载一遍的问题：已下好的包会保留，授权回来自动继续安装，「检查更新」也优先复用，不再重复下载。\n· 沿用 1.2.8 的久离重连修复（刷新蓝牙发现缓存 + 重试）。\n· 升级说明：覆盖安装到 1.2.9 即可，签名一致，配对地址与历史都保留。",
-  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.9.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.9",
-  "size": 662416
+  "versionCode": 15,
+  "versionName": "1.2.10",
+  "notes": "听音手表 1.2.10 · 修复「正在启动」一直卡住\n\n· 根因：手表 App 启动时先显示占位文字「正在启动…」，而连接服务在界面挂载之前\n  就把「已连接·字幕同步中」状态推过来了；旧版状态回调发现界面还没挂上就直接丢弃，\n  于是文字永远停在「正在启动…」，看起来像死了，其实字幕链路是好的。\n· 修复：连接服务缓存最近一次状态，界面挂上时立即重放，任何时序下都不会卡在占位文字。\n· 配合手机端 2.6.7.51：手机改为常驻收音，手表重连后无需再点手机通知即可出字幕。\n· 升级说明：覆盖安装即可，签名一致，配对地址与历史记录保留。",
+  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.10.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.10",
+  "size": 662516
 }
