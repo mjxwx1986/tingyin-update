@@ -1,8 +1,8 @@
 {
-  "versionCode": 15,
-  "versionName": "1.2.10",
-  "notes": "听音手表 1.2.10 · 修复「正在启动」一直卡住\n\n· 根因：手表 App 启动时先显示占位文字「正在启动…」，而连接服务在界面挂载之前\n  就把「已连接·字幕同步中」状态推过来了；旧版状态回调发现界面还没挂上就直接丢弃，\n  于是文字永远停在「正在启动…」，看起来像死了，其实字幕链路是好的。\n· 修复：连接服务缓存最近一次状态，界面挂上时立即重放，任何时序下都不会卡在占位文字。\n· 配合手机端 2.6.7.51：手机改为常驻收音，手表重连后无需再点手机通知即可出字幕。\n· 升级说明：覆盖安装即可，签名一致，配对地址与历史记录保留。",
-  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.10.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.10",
-  "size": 662516
+  "versionCode": 16,
+  "versionName": "1.2.11",
+  "notes": "听音手表 1.2.11 · 更新提醒 24 小时一次，更新框去掉「浏览器下载」\n\n· 启动后静默检查更新改为 24 小时内最多提醒一次；设置里手动点「检查更新」\n  不受限制，随时可查。清单拉取失败不记时间，下次启动仍会重试。\n· 更新下载框与失败框移除「浏览器下载」，一律走应用内多线路换源下载；\n  下载失败时改为点「重试」重走线路，不再把用户丢进浏览器。\n· 沿用 1.2.10 的「正在启动」状态重放修复，其余功能无变化。\n· 手机端 2.6.7.54、电脑端 v1.0.25 同步改为 24 小时提醒一次。\n· 升级说明：覆盖安装即可，签名一致，配对地址与历史记录保留。",
+  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.11.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.11",
+  "size": 662488
 }
