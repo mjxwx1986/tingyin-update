@@ -1,8 +1,8 @@
 {
-  "versionCode": 11,
-  "versionName": "1.2.6",
-  "notes": "听音手表 1.2.6 · 修好「返回桌面后通知栏一直挂着、没有退出」\n\n· 根因：上一版（1.2.5）用「屏幕是否还亮着」来区分「息屏」和「回桌面」。但很多手表回表盘会把屏幕一起熄灭，或者系统只回调 onPause 不回调 onStop，等兜底判定时屏幕已经灭了，就被误判成「只是息屏、不算离开」，于是前台服务和通知一直挂着。\n· 改用 Android 标准的 onUserLeaveHint：只有用户主动离开 App（回表盘 / 上滑退出 / 切到别的 App）才退出；屏幕超时熄灭【不会】触发它，所以「手表自己息屏仍保留连接、亮屏接着出字幕」这条依然成立。\n· 退出动作不变：断开蓝牙、停掉前台服务（通知随之消失）、关闭 App，不再后台常驻、不额外耗电；手机端（2.6.7.19）收到断开也会停掉这次「手表唤起」的收音。\n· 边界不变：点「设置」看一眼、更新下载中都不算离开；手表自己息屏不算退出。\n\n升级说明：只升手表端到 1.2.6 即可，手机 2.6.7.19 不用动。签名一致可直接覆盖安装，配对地址、字号和历史都保留。",
-  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.6.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.6",
-  "size": 660900
+  "versionCode": 12,
+  "versionName": "1.2.7",
+  "notes": "听音手表 1.2.7 · 新增「预览出字」\n\n· 手机端说话时，手表现在能在整句定稿前就实时显示正在识别的灰色半句（预览），整句识别完成后由正式字幕覆盖，出字更跟手，不再要等整句结束才跳出来。\n· 手机端需升级到 2.6.7.41 及以上，预览功能才会生效；旧版手机只推定稿字幕，手表行为与之前一致。\n· 其余不变：蓝牙自动连接、息屏保留连接、回表盘/退出自动断开、字号与历史保留。\n\n升级说明：手表端覆盖安装到 1.2.7 即可，签名一致可直接覆盖，配对地址与历史都保留。",
+  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.7.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.7",
+  "size": 661252
 }
