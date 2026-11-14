@@ -1,8 +1,8 @@
 {
-  "versionCode": 16,
-  "versionName": "1.2.11",
-  "notes": "听音手表 1.2.11 · 更新提醒 24 小时一次，更新框去掉「浏览器下载」\n\n· 启动后静默检查更新改为 24 小时内最多提醒一次；设置里手动点「检查更新」\n  不受限制，随时可查。清单拉取失败不记时间，下次启动仍会重试。\n· 更新下载框与失败框移除「浏览器下载」，一律走应用内多线路换源下载；\n  下载失败时改为点「重试」重走线路，不再把用户丢进浏览器。\n· 沿用 1.2.10 的「正在启动」状态重放修复，其余功能无变化。\n· 手机端 2.6.7.54、电脑端 v1.0.25 同步改为 24 小时提醒一次。\n· 升级说明：覆盖安装即可，签名一致，配对地址与历史记录保留。",
-  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.11.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.11",
-  "size": 662488
+  "versionCode": 17,
+  "versionName": "1.2.12",
+  "notes": "听音手表 1.2.12 · 返回桌面/表盘强制停止听音并断开手机，重新打开自动触发手机收音\n\n· 修复：之前手表按【返回键】回桌面时，服务不销毁、蓝牙不断、手机一直在转字幕。\n  原因：返回键在多数 ROM 上不触发 onUserLeaveHint，旧代码靠它判定「是否离开」会漏判。\n  现改用 PowerManager.isInteractive() 判定：屏幕还亮却不在前台 = 用户主动回到了表盘/桌面，\n  立即断开手机蓝牙、停掉前台服务（通知随之消失）。仅「屏幕熄灭」才保留后台连接（息屏继续听）。\n· 断开手机后，手机端 2.6.7.58 会随之停止收音转字幕（不再后台空转耗电）。\n· 重新打开手表 App 会自动发 start_rec，手机端自动恢复后台收音（零点击）。\n· 沿用 1.2.11 的「24 小时提醒一次」「更新框无浏览器下载」「正在启动」状态重放等，无变化。\n· 升级说明：覆盖安装即可，签名一致，配对地址与历史记录保留。需同时升级手机端 2.6.7.58。",
+  "apkUrl": "https://cdn.jsdelivr.net/gh/mjxwx1986/tingyin-update@main/apks/tingyin-watch-1.2.12.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/watch-v1.2.12",
+  "size": 662496
 }
