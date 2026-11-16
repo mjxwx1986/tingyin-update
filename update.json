@@ -1,8 +1,8 @@
 {
-  "versionCode": 92,
-  "versionName": "2.6.7.58",
-  "notes": "v2.6.7.58 · 手表断开后手机真正停麦（省电）+ 配合手表 1.2.12 返回桌面强制停止\n\n· 手机端【省电】手表断开后，麦克风硬件真正停止（AudioRecord.stop()），\n  不再每 32ms 空读麦克风，息屏/后台不再无意义耗电；\n  连上手表时复用同一条录音会话自动恢复，零点击、不重建、不释放，\n  因此不会触发 Android 14+「后台重建录音会话被静音成全 0」的坑。\n\n· 配合手表端 1.2.12：手表【返回桌面/表盘】会强制停止听音并断开手机蓝牙，\n  手机随之收到断开信号、停止转字幕（不再后台长时间空转）；\n  重新打开手表 App 会自动触发手机恢复收音（start_rec -> 手机自动开麦）。\n  （之前手表按返回键不触发 onUserLeaveHint，导致服务一直挂着、手机一直转字幕，\n   已改用 PowerManager.isInteractive() 判定：屏幕还亮却不在前台 = 用户主动离开。）\n\n· 沿用 2.6.7.57 / 56 / 55（保录音会话、后台绝不重建 microphone 前台服务、\n  24 小时提醒一次、无浏览器下载等），无变化。\n\n· 边界：手机重启或进程被 ROM 强杀后，仍需让 App 可见一次建立合法前台服务\n  （这时会提示「点一下打开听音」），之后日常走开/回来全自动。\n· 升级：直接覆盖安装，签名证书与 2.6.7.50~57 完全一致，机器码、授权、\n  手表配对记录、字幕数据全部保留。需同时升级手表端 1.2.12。\n\n实测：装好后打开一次手机听音 -> 打开手表 App（手机自动开麦出字幕）->\n手表按返回键回桌面（手表停止、手机也停止转字幕）-> 再开手表 App（自动恢复）。\n若异常，adb logcat -s TingyinMic 看是否有\n「watch gone: mic hardware stopped (ar.stop), session kept」与\n「watch back: ar.startRecording() reused (FGS alive), no rebuild」。",
-  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.58/tingyin-2.6.7.58.apk",
-  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.58",
+  "versionCode": 93,
+  "versionName": "2.6.7.59",
+  "notes": "v2.6.7.59 · 修复「暂停了还很费电」：暂停期间释放 CPU 唤醒锁\n\n· 【省电修复】有用户反馈：明明一直是暂停收音状态，电量详情里\n  「听音」却耗电 11%+、「保持唤醒状态」累计好几分钟。\n  根因：后台收音的前台服务会持一把 PARTIAL_WAKE_LOCK 防止 CPU 深睡，\n  但暂停时为了保住麦克风会话（避免 2.6.7.55「重连后静音」），\n  服务一直不销毁，唤醒锁也就从开麦一直攥到点「停止收音」——\n  即使暂停期间麦克风硬件早已停止，CPU 仍被唤醒锁钉住无法深睡，于是费电。\n  本版改为：暂停（手表离开 / 手动暂停）时释放唤醒锁，让 CPU 正常休眠；\n  恢复收音时自动重新申请。不动前台服务、不释放 AudioRecord，\n  手表连上依旧零点击自动恢复，绝无「后台重建录音会话被静音」的坑。\n\n· 沿用 2.6.7.58 / 57 / 56 / 55 全部能力（停麦省电、保会话、\n  后台不重建 microphone FGS、24 小时提醒一次等），无变化。\n\n· 边界：手机重启或进程被 ROM 强杀后，仍需让 App 可见一次建立合法前台服务\n  （这时会提示「点一下打开听音」），之后日常走开/回来全自动。\n· 升级：直接覆盖安装，签名证书与 2.6.7.50~58 完全一致，机器码、授权、\n  手表配对记录、字幕数据全部保留。\n\n实测：暂停后锁屏放置一段时间，再到系统「电量详情」看听音的\n「保持唤醒状态」不再随时间增长；手表连上 / 手动继续后自动恢复收音。\n若异常，adb logcat -s MicService 看是否有\n「wakelock released: paused」（暂停放锁）与\n「wakelock re-acquired: recording resumed」（恢复拿锁）。",
+  "apkUrl": "https://github.com/mjxwx1986/tingyin-update/releases/download/v2.6.7.59/tingyin-2.6.7.59.apk",
+  "pageUrl": "https://github.com/mjxwx1986/tingyin-update/releases/tag/v2.6.7.59",
   "size": 56022156
 }
